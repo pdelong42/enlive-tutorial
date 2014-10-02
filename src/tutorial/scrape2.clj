@@ -4,7 +4,7 @@
 (def ^:dynamic *base-url* "https://news.ycombinator.com/")
 
 (defn fetch-url [url]
-  (html/html-resource (java.net.URL. url)))
+  (-> url clj-http.client/get :body java.io.StringReader. html/html-resource))
 
 (defn hn-headlines-and-points []
   (map html/text
