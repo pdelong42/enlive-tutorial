@@ -1,5 +1,6 @@
 (ns tutorial.scrape2
-  (:require [net.cgrand.enlive-html :as html]))
+  (:require [clj-http.client]
+            [net.cgrand.enlive-html :as html]))
 
 (def ^:dynamic *base-url* "https://news.ycombinator.com/")
 
